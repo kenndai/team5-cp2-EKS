@@ -10,8 +10,11 @@ phases:
             - source ~/.bashrc
             - echo 'Check kubectl version'
             - kubectl version --short --client
+            - aws --version
     pre_build:
         commands:
+            - echo -- who is the current IAM identity?
+            - aws sts get-caller-identity
             - echo Logging into Amazon EKS...
             - aws eks --region us-west-2 update-kubeconfig --name team5-cap2-ec2-clus2
             - echo check config
