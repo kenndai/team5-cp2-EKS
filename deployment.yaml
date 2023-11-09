@@ -18,8 +18,8 @@ spec:
                app: cicd-demo
         spec:
           containers:
-          - image: 962804699607.dkr.ecr.us-west-2.amazonaws.com/team5-capstone2:latest
+          - name: cicd-demo
+            image: 962804699607.dkr.ecr.us-west-2.amazonaws.com/team5-capstone2:latest
             imagePullPolicy: Always
-            name: cicd-demo
             ports:
-                - containerPort: 3000
+               - containerPort: 3000
