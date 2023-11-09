@@ -1,0 +1,23 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: team5-cap2-ec2-clus
+  region: us-west-2
+
+vpc:
+  subnets:
+    private:
+      us-west-2a: {id: "subnet-0285153096ded3b7e"}   
+      us-west-2b: {id: "subnet-0d5e1a03a7e2d6255"}
+      us-west-2c: {id: "subnet-0391666d3649dc1bd"}
+
+nodeGroups:
+  - name: ng-1-workers    
+    instanceType: t3.large
+    desiredCapacity: 2
+    privateNetworking: true
+  - name: ng-2-builders
+    instanceType: t3.large
+    desiredCapacity: 2
+    privateNetworking: true
