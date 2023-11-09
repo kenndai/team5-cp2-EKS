@@ -10,7 +10,6 @@ phases:
             - source ~/.bashrc
             - echo 'Check kubectl version'
             - kubectl version --short --client
-            - aws --version
     pre_build:
         commands:
             - echo -- who is the current IAM identity?
