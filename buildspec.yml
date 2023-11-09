@@ -29,3 +29,4 @@ phases:
             - kubectl apply -f service.yaml
             - kubectl get svc --all-namespaces
             - kubect get ing
+            
